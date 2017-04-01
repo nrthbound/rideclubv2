@@ -1,0 +1,51 @@
+.box {
+
+    padding: 0;
+
+    .box-heading {
+        margin-bottom: .5em;
+        border-bottom:1px solid #EEE;
+        padding: .5em 1em;
+        font-weight: bold;
+    }
+
+
+    .box-list {
+
+        li {
+            padding: .5em 1em;
+            border-bottom:1px solid #EEE;
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+
+        .box-list-avatar {
+            float: left; margin-right: 15px;
+
+            img {
+                border-radius: 50%;
+            }
+        }
+
+        .box-list-title {
+            float: left;
+            padding: .3em 0;
+
+            p.rides {
+                color: $primary;
+                font-size: 0.8rem;
+                font-weight: bold;
+            }
+
+        }
+
+        .box-list-action {
+            float: right;
+            padding: .75em 0;
+
+        }
+
+    }
+
+}

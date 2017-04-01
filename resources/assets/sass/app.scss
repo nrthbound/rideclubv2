@@ -1,0 +1,28 @@
+// Variables
+@import "variables";
+
+// Bulma
+@import "node_modules/bulma/bulma";
+
+// Slick
+@import "node_modules/slick-carousel/slick/slick.scss";
+
+// Main Pages
+@import "page/activity";
+
+// Components
+@import "component/panel";
+@import "component/nav";
+
+.is-small-icon {
+    font-size: 1rem !important;
+}
+
+.box {
+    border-radius: 0;
+}
+
+// Turn this into a slotted component in the layouts.app template
+body {
+
+}
