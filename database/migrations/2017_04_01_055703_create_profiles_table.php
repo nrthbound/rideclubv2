@@ -16,7 +16,7 @@ class CreateProfilesTable extends Migration
         Schema::create('profiles', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->string('display_name')->unique();
+            $table->string('display_name')->unique()->nullable();
             $table->string('avatar', 32)->default('default_user');
             $table->string('header', 32)->default('default_header');
             $table->timestamps();

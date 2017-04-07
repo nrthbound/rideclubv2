@@ -111,7 +111,8 @@
 }
 
 .slide {
-    margin: 0;
+    margin: 0 1em;
+    border-radius: 6px;
     outline: none !important;
     position: relative;
     height:22em;
@@ -130,6 +131,7 @@
         opacity: 0.3;
         height: 100%;
         width: 100%;
+        border-radius: 6px;
         content:"";
         /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.65+100 */
         background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%); /* FF3.6-15 */
@@ -166,9 +168,40 @@
 
 .card {
 
+    p.is-feed-description {
+        min-height: 3rem;
+    }
 
+    .is-feed-type {
+        position: absolute;
+        top: 1em;
+        left: 1em;
+    }
 
     img {
+
+    }
+
+
+    .is-action-bar {
+
+        .is-left-actions {
+            float: left;
+        }
+
+        .is-right-actions {
+            float: right;
+
+            span {
+                vertical-align: middle;
+                font-size:0.9rem;
+            }
+
+            .material-icons {
+                vertical-align: middle;
+            }
+
+        }
 
     }
 

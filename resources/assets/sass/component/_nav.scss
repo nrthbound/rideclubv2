@@ -1,5 +1,32 @@
 .is-nav {
-    background-color: transparent;
-    margin-top: 30px;
+        position: fixed;
+        background-color: #FFF;
+        top: 0;
+        left: 0;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border-bottom:1px solid #EEE;
+        width: 100%;
+        z-index: 11;
+        transition: 0.1s ease all;
+
+        a.logo {
+            display: block;
+            width: 50px;
+            height: 50px;
+            transition: 0.1s ease all;
+        }
+
+        &.is-small {
+            padding-top:0px;
+            padding-bottom:0px;
+            min-height: 1rem;
+
+            a.logo {
+                margin-top: 10px;
+                width: 30px;
+                height: 30px;
+            }
+        }
 
 }

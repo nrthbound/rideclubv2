@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
@@ -23,4 +25,9 @@ Route::get('/home', 'HomeController@index');
 
 
 // Routes related to Activities
-Route::get('/activity', 'ActivityController@view')->name('activities');
+Route::get('/activity', 'ActivityController@view')->name('activity');
+
+
+
+// User Profile Routes
+Route::post('/profile/{profile}/update', 'ProfileController@update')->name('update-profile');

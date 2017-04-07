@@ -13,6 +13,9 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    <!-- Tipped -->
+    <link rel="stylesheet" href="{{ asset('css/tipped.css') }}">
+
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700|Material+Icons" rel="stylesheet">
 
@@ -25,6 +28,13 @@
     </script>
 </head>
 <body>
+
+    @if (Session::has('flash_message'))
+        <div class="headsup headsup--{{Session::get('flash_message_level')}}">
+            {!! Session::get('flash_message') !!}
+        </div>
+    @endif
+
     <div id="app">
 
         @include('component.nav')
@@ -34,6 +44,29 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/tipped.js') }}"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            Tipped.create('.simple-tooltip');
+        });
+    </script>
+    <script>
+        function init() {
+            window.addEventListener('scroll', function(e){
+                var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+                    shrinkOn = 300,
+                    header = document.querySelector("nav");
+                if (distanceY > shrinkOn) {
+                    header.classList.add('is-small');
+                } else {
+                    if (header.classList.contains('is-small')) {
+                        header.classList.remove('is-small');
+                    }
+                }
+            });
+        }
+        window.onload = init();
+    </script>
 
     @yield('scripts')
 

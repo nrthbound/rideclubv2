@@ -14,6 +14,18 @@
 @import "component/panel";
 @import "component/nav";
 
+
+
+.input {
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.modal-box {
+    background: #FFF;
+    padding: 1em;
+}
+
 .is-small-icon {
     font-size: 1rem !important;
 }

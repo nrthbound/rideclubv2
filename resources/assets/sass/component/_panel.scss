@@ -1,4 +1,8 @@
-.box {
+.hero.is-primary .box {
+    color: #333;
+}
+
+.box.alternative {
 
     padding: 0;
 
@@ -6,9 +10,12 @@
         margin-bottom: .5em;
         border-bottom:1px solid #EEE;
         padding: .5em 1em;
-        font-weight: bold;
     }
 
+
+    .is-container {
+        padding: 1em;
+    }
 
     .box-list {
 
@@ -19,6 +26,7 @@
                 border-bottom: none;
             }
         }
+
 
         .box-list-avatar {
             float: left; margin-right: 15px;
