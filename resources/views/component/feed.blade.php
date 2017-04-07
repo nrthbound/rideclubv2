@@ -36,8 +36,10 @@
                                     <div class="is-right-actions">
                                         <small>
                                             <div class="action-icon">
-                                                <i class="material-icons">favorite_border</i>
-                                                <span>52</span>
+                                                <a href="#" class="is-icon">
+                                                    <i class="material-icons">favorite_border</i>
+                                                    <span>52</span>
+                                                </a>
                                             </div>
                                         </small>
                                     </div>
@@ -86,8 +88,10 @@
                                     <div class="is-right-actions">
                                         <small>
                                             <div class="action-icon">
-                                                <i class="material-icons">favorite_border</i>
-                                                <span>1,203</span>
+                                                <a href="#" class="is-icon">
+                                                    <i class="material-icons">favorite</i>
+                                                    <span>1,203</span>
+                                                </a>
                                             </div>
                                         </small>
                                     </div>
