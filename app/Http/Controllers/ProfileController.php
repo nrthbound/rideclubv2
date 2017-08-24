@@ -79,7 +79,10 @@ class ProfileController extends Controller
     public function update(Request $request, Profile $profile)
     {
 
+        dd($request);
+
         $this->validate($request, [
+            'password' => 'sometimes|confirmed',
             'display_name' => [
                 'sometimes',
                 Rule::unique('profiles')->ignore(\Auth::user()->id, 'user_id' ),
