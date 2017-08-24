@@ -10,6 +10,12 @@ use Illuminate\Validation\Rule;
 
 class ProfileController extends Controller
 {
+
+    public function __construct()
+    {
+        return $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -17,7 +23,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        //
+        return view('user.profile');
     }
 
     /**

@@ -22,6 +22,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 
+// Temporary Profile View Route
+Route::get('/profile', 'ProfileController@index');
 
 
 // Routes related to Activities
@@ -31,3 +33,7 @@ Route::get('/activity', 'ActivityController@view')->name('activity');
 
 // User Profile Routes
 Route::post('/profile/{profile}/update', 'ProfileController@update')->name('update-profile');
+
+
+//Snaps
+Route::get('/snap/new', 'SnapController@create');

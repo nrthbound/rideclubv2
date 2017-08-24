@@ -74,7 +74,7 @@
                 <div class="links">
                     <a href="#"><strike>Landing Page</strike></a>
                     <a href="#"><strike>Home Page</strike></a>
-                    <a href="#"><strike>Activity Page</strike></a>
+                    <a href="/activity">Activity Page</a>
                     <a href="#"><strike>User View Page</strike></a>
                     <a href="#"><strike>Build Page</strike></a>
                     <a href="#"><strike>Snap Page</strike></a>

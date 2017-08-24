@@ -10,6 +10,7 @@
         margin-bottom: .5em;
         border-bottom:1px solid #EEE;
         padding: .5em 1em;
+        font-size:0.8rem;
     }
 
 
@@ -22,6 +23,7 @@
         li {
             padding: .5em 1em;
             border-bottom:1px solid #EEE;
+            font-size:0.8rem;
             &:last-child {
                 border-bottom: none;
             }

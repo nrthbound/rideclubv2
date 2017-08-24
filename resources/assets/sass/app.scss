@@ -9,10 +9,16 @@
 
 // Main Pages
 @import "page/activity";
+@import "page/profile";
+@import "page/snap";
 
 // Components
 @import "component/panel";
 @import "component/nav";
+
+body {
+    padding-top: 60px;
+}
 
 a.is-icon {
     color: #333;

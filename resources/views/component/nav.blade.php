@@ -2,7 +2,7 @@
     <div class="container">
         <div class="nav-left">
             <a class="logo" href="{{route('activity')}}">
-                <img src="images/ridelogo-alt.svg" alt="Rideclub" style="max-height: 50px;" />
+                <img src="/images/ridelogo-alt.svg" alt="Rideclub" style="max-height: 50px;" />
             </a>
         </div>
 
@@ -20,7 +20,7 @@
 <div class="nav-right nav-menu">
     @if ( \Auth::check() )
 
-        <a class="nav-item is-tab">
+        <a class="nav-item is-tab" href="/profile">
             <figure class="image is-16x16" style="margin-right: 8px;">
                 <img src="{{\Cloudder::show(\Auth::user()->profile->avatar, array("width" => 50, "height" => 50, "crop" => "fill"))}}" alt="" />
             </figure>

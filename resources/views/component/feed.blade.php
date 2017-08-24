@@ -15,7 +15,7 @@
                             <div class="media">
                                 <div class="media-left">
                                     <figure class="image is-48x48">
-                                        <img src="{{\Cloudder::show(\Auth::user()->profile->avatar, array("width" => 96, "height" => 96, "crop" => "fill"))}}" alt="" />
+                                        {{-- <img src="{{\Cloudder::show(\Auth::user()->profile->avatar, array("width" => 96, "height" => 96, "crop" => "fill"))}}" alt="" /> --}}
                                     </figure>
                                 </div>
                                 <div class="media-content">
@@ -67,7 +67,7 @@
                             <div class="media">
                                 <div class="media-left">
                                     <figure class="image is-48x48">
-                                        <img src="{{\Cloudder::show(\Auth::user()->profile->avatar, array("width" => 96, "height" => 96, "crop" => "fill"))}}" alt="" />
+                                        {{-- <img src="{{\Cloudder::show(\Auth::user()->profile->avatar, array("width" => 96, "height" => 96, "crop" => "fill"))}}" alt="" /> --}}
                                     </figure>
                                 </div>
                                 <div class="media-content">
