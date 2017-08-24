@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Profile;
-
-use Illuminate\Validation\Rule;
+use App\Http\Requests\UpdateProfile;
 
 class ProfileController extends Controller
 {
@@ -76,25 +75,9 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Profile $profile)
+    public function update(UpdateProfile $request, Profile $profile)
     {
-
-        dd($request);
-
-        $this->validate($request, [
-            'password' => 'sometimes|confirmed',
-            'display_name' => [
-                'sometimes',
-                Rule::unique('profiles')->ignore(\Auth::user()->id, 'user_id' ),
-            ],
-        ]);
-
-        $profile->update(request()->all());
-
-        flash('Your profile was updated successfully.', 'success');
-
-        return redirect('/activity');
-
+        return back();
     }
 
     /**

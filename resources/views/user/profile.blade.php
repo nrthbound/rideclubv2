@@ -47,33 +47,26 @@
 
                         <div class="column">
                             <div class="content">
-                                <div class="is-management">
 
+                                <div class="is-management">
                                     <h3>Account</h3>
                                     <div class="box">
-                                        <form class="" action="{{route('update-profile', ['id' => \Auth::user()->id])}}" method="post">
-                                            <div class="field">
-                                              <label class="label">Username/Email</label>
-                                              <p class="control">
-                                                <input class="input" type="text" placeholder="Username/Email" value="{{\Auth::user()->email}}">
-                                              </p>
-                                              {{-- <p class="help is-success">This username is available</p> --}}
-                                            </div>
-
+                                        <form class="" action="{{route('update-profile', ['id' => \Auth::user()->profile->id])}}" method="post">
                                             <div class="field">
                                               <label class="label">Display Name</label>
                                               <p class="control">
-                                                <input class="input" type="text" placeholder="Display Name" value="{{\Auth::user()->profile->display_name}}">
+                                                <input class="input" type="text" placeholder="Display Name" name="display_name" value="{{\Auth::user()->profile->display_name}}">
                                               </p>
                                               {{-- <p class="help is-success">This username is available</p> --}}
                                             </div>
 
+                                            {{--
                                             <div class="field">
                                               <label class="label">Password</label>
                                               <p class="control">
                                                 <input id="password" type="password" placeholder="Password" class="input" name="password" value="">
                                               </p>
-                                              {{-- <p class="help is-success">This username is available</p> --}}
+                                              <p class="help is-success">This username is available</p>
                                             </div>
 
                                             <div class="field">
@@ -81,9 +74,9 @@
                                               <p class="control">
                                                 <input id="password" type="password" placeholder="Confirm Password" class="input" name="password_confirmation" value="">
                                               </p>
-                                              {{-- <p class="help is-success">This username is available</p> --}}
+                                              <p class="help is-success">This username is available</p>
                                             </div>
-
+                                                --}}
                                             <div class="field is-grouped">
                                               <div class="control">
                                                 <button type="submit" class="button is-primary">Submit</button>
