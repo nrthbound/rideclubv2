@@ -77,6 +77,9 @@ class ProfileController extends Controller
      */
     public function update(UpdateProfile $request, Profile $profile)
     {
+
+        $request->persist($profile);
+
         return back();
     }
 

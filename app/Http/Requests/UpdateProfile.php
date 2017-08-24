@@ -35,8 +35,9 @@ class UpdateProfile extends FormRequest
         ];
     }
 
-    public function persist()
+    public function persist($profile)
     {
+
         $profile->update(request()->all());
 
         flash('Your profile was updated successfully.', 'success');

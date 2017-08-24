@@ -57,8 +57,18 @@
                                               <p class="control">
                                                 <input class="input" type="text" placeholder="Display Name" name="display_name" value="{{\Auth::user()->profile->display_name}}">
                                               </p>
-                                              {{-- <p class="help is-success">This username is available</p> --}}
+                                              <p class="help is-success">This username is available</p>
                                             </div>
+
+                                            @if ($errors->any())
+                                                <div class="alert alert-danger">
+                                                    <ul>
+                                                        @foreach ($errors->all() as $error)
+                                                            <li>{{ $error }}</li>
+                                                        @endforeach
+                                                    </ul>
+                                                </div>
+                                            @endif
 
                                             {{--
                                             <div class="field">
