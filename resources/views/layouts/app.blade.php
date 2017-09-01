@@ -13,6 +13,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    <link rel="stylesheet" href="{{ asset('css/iziToast.min.css') }}">
+
     <!-- Tipped -->
     <link rel="stylesheet" href="{{ asset('css/tipped.css') }}">
 
@@ -29,12 +31,6 @@
 </head>
 <body>
 
-    @if (Session::has('flash_message'))
-        <div class="headsup headsup--{{Session::get('flash_message_level')}}">
-            {!! Session::get('flash_message') !!}
-        </div>
-    @endif
-
     <div id="app">
 
         @include('component.nav')
@@ -45,6 +41,7 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/tipped.js') }}"></script>
+    <script src="{{ asset('js/iziToast.min.js') }}"></script>
     <script type="text/javascript">
         $(document).ready(function() {
             Tipped.create('.simple-tooltip');
@@ -52,6 +49,26 @@
     </script>
     <script>
         function init() {
+
+            @if ($errors->any())
+                @foreach ($errors->all() as $error)
+                    iziToast.error({
+                        message: "{{$error}}",
+                        position: "topCenter",
+                        class: "error",
+                    });
+                @endforeach
+            @endif
+
+            @if (Session::has('flash_message'))
+                iziToast.show({
+                    message: "{!! Session::get('flash_message') !!}",
+                    position: "topCenter",
+                    class: "{{Session::get('flash_message_level')}}",
+                    theme: "dark"
+                });
+            @endif
+
             window.addEventListener('scroll', function(e){
                 var distanceY = window.pageYOffset || document.documentElement.scrollTop,
                     shrinkOn = 300,

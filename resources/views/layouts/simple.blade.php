@@ -13,6 +13,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    <link rel="stylesheet" href="/node_modules/izitoast/dist/css/iziToast.min.css">
+
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700|Material+Icons" rel="stylesheet">
 
@@ -31,7 +33,9 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="/node_modules/izitoast/dist/js/iziToast.min.js"></script>
 
+    </script>
     @yield('scripts')
 
 </body>

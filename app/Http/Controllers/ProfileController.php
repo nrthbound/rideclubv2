@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Profile;
-use App\Http\Requests\UpdateProfile;
+use App\Http\Requests\UpdateProfileRequest;
 
 class ProfileController extends Controller
 {
@@ -75,7 +75,7 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateProfile $request, Profile $profile)
+    public function update(UpdateProfileRequest $request, Profile $profile)
     {
 
         $request->persist($profile);
