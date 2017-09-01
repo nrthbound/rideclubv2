@@ -32,6 +32,16 @@
                                 </div>
 
                                 <div class="field">
+                                    <label class="label">Username</label>
+                                    <p class="control has-icon has-icon-right">
+                                        <input name="username" class="input{{ $errors->has('username') ? ' is-danger' : '' }}" type="text" placeholder="Username" required autofocus value="{{ old('username') }}">
+                                    </p>
+                                    @if ($errors->has('username'))
+                                        <p class="help is-danger">{{ $errors->first('username') }}</p>
+                                    @endif
+                                </div>
+
+                                <div class="field">
                                     <label class="label">Email</label>
                                     <p class="control has-icon has-icon-right">
                                         <input name="email" class="input{{ $errors->has('email') ? ' is-danger' : '' }}" type="text" placeholder="Name" required autofocus value="{{ old('email') }}">

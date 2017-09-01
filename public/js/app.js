@@ -11055,7 +11055,7 @@ $('.is-loadable').on('click', function () {
 /* 11 */
 /***/ (function(module, exports) {
 
-
+// TODO: Convert profile requests to AJAX using Axios
 
 /***/ }),
 /* 12 */

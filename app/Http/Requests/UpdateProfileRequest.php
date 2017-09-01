@@ -5,6 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
+
 class UpdateProfileRequest extends FormRequest
 {
     /**
@@ -28,7 +29,7 @@ class UpdateProfileRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
+            'name' => 'sometimes|required',
             'display_name' => [
                 'sometimes',
                 Rule::unique('profiles')->ignore(\Auth::user()->id, 'user_id' ),
@@ -44,7 +45,7 @@ class UpdateProfileRequest extends FormRequest
 
         // Since Laravel will always have the Password field present (null if empty),
         // we just have to test if its false/null here
-        if ($data['password'])
+        if (isset($data['password']))
         {
             $data['password'] = bcrypt($data['password']);
             $profile->user->update($data);
@@ -55,7 +56,7 @@ class UpdateProfileRequest extends FormRequest
 
         // This updates the profile model with any profile-related fields.
         $profile->update(request()->all());
-        
+
         flash('Your profile was updated successfully.', 'success');
     }
 }

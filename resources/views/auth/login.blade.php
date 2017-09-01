@@ -22,12 +22,12 @@
                             {{ csrf_field() }}
 
                                 <div class="field">
-                                    <label for="email" class="label">Email Address</label>
+                                    <label for="username" class="label">Username</label>
                                     <p class="control has-icon has-icon-right">
-                                        <input id="email" name="email" class="input{{ $errors->has('email') ? ' is-danger' : '' }}" type="text" placeholder="Email" required autofocus value="{{ old('email') }}">
+                                        <input id="username" name="username" class="input{{ $errors->has('username') ? ' is-danger' : '' }}" type="text" placeholder="Username" required autofocus value="{{ old('username') }}">
                                     </p>
-                                    @if ($errors->has('email'))
-                                        <p class="help is-danger">{{ $errors->first('email') }}</p>
+                                    @if ($errors->has('username'))
+                                        <p class="help is-danger">{{ $errors->first('username') }}</p>
                                     @endif
                                 </div>
 

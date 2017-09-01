@@ -54,7 +54,7 @@
                                         <div class="field">
                                           <label class="label">Name</label>
                                           <p class="control">
-                                            <input class="input" type="text" placeholder="Name" name="name" value="{{\Auth::user()->name}}" />
+                                            <input class="input {{ $errors->has('name') ? "is-danger" : "" }}" type="text" placeholder="Name" name="name" value="{{\Auth::user()->name}}" />
                                           </p>
                                           {{-- <p class="help is-success">This username is available</p> --}}
                                         </div>
@@ -62,7 +62,7 @@
                                         <div class="field">
                                           <label class="label">Display Name</label>
                                           <p class="control">
-                                            <input class="input" type="text" placeholder="Display Name" name="display_name" value="{{\Auth::user()->profile->display_name}}" />
+                                            <input class="input {{ $errors->has('display_name') ? "is-danger" : "" }}" type="text" placeholder="Display Name" name="display_name" value="{{\Auth::user()->profile->display_name}}" />
                                           </p>
                                           {{-- <p class="help is-success">This username is available</p> --}}
                                         </div>
@@ -90,7 +90,7 @@
                                         </div>
                                     </form>
                                 </div>
-                            </div>
+                            </div>                            
                         </div>
                     </div>
                 </div>

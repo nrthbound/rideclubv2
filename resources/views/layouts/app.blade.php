@@ -13,7 +13,11 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    <!-- IziToast Toast Notifications -->
     <link rel="stylesheet" href="{{ asset('css/iziToast.min.css') }}">
+
+    <!-- IziToast Toast Notifications -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
     <!-- Tipped -->
     <link rel="stylesheet" href="{{ asset('css/tipped.css') }}">
@@ -21,6 +25,17 @@
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700|Material+Icons" rel="stylesheet">
 
+    <!-- Typekit -->
+    <script>
+      (function(d) {
+        var config = {
+          kitId: 'fcz6gnq',
+          scriptTimeout: 3000,
+          async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+    </script>
 
     <!-- Scripts -->
     <script>
