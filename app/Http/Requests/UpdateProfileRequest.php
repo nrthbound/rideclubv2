@@ -42,17 +42,20 @@ class UpdateProfileRequest extends FormRequest
     {
         $data = request()->all();
 
+        // Since Laravel will always have the Password field present (null if empty),
+        // we just have to test if its false/null here
         if ($data['password'])
         {
             $data['password'] = bcrypt($data['password']);
             $profile->user->update($data);
         } else {
+            // Otherwise, we know the password isn't present so we save without it.
             $profile->user->update(request()->except(['password','password_confirmation']));
         }
 
-        // This is working fine
+        // This updates the profile model with any profile-related fields.
         $profile->update(request()->all());
-
+        
         flash('Your profile was updated successfully.', 'success');
     }
 }
