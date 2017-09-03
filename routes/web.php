@@ -15,24 +15,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
+// User Profile Routes
+Route::post('/profile/{profile}/update', 'ProfileController@update')->name('update-profile');
 
 // Temporary Profile View Route
 Route::get('/profile', 'ProfileController@index');
 
-
 // Routes related to Activities
 Route::get('/activity', 'ActivityController@view')->name('activity');
 
-
-
-// User Profile Routes
-Route::post('/profile/{profile}/update', 'ProfileController@update')->name('update-profile');
+// Routes related to Builds
+Route::resource('builds', 'BuildController');
 
 
 //Snaps

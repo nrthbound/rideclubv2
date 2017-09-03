@@ -4,12 +4,11 @@
 // Bulma
 @import "node_modules/bulma/bulma";
 
-@import "node_modules/aos/src/sass/aos";
-
 // Slick
 @import "node_modules/slick-carousel/slick/slick.scss";
 
 // Main Pages
+@import "page/common";
 @import "page/activity";
 @import "page/profile";
 @import "page/snap";
