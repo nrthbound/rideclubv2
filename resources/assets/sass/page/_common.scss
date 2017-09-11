@@ -1,6 +1,63 @@
-h2.page-title {
-    font-weight: bold;
-    font-size: 2rem;
-    border-bottom:1px solid $primary;
-    margin-bottom: 20px;
+.is-sr {
+    position: absolute;
+     width: 1px;
+     height: 1px;
+     padding: 0;
+     margin: -1px;
+     overflow: hidden;
+     clip: rect(0,0,0,0);
+     border: 0;
+}
+
+// Reset Placeholder Colors
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #CCC;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #CCC;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #CCC;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #CCC;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+   color:    #CCC;
+}
+
+div.is-page {
+    margin-top: 30px;
+}
+
+.media-content {
+    h3 {
+        font-weight: bold;
+    }
+
+    h4 {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 0.75rem;
+        color: #888;
+    }
+}
+.is-card-link {
+    color: #666;
+}
+
+.level.is-primary {
+    padding: 15px;
+    background: $primary;
+    color: #FFF;
+
+    .subtitle {
+        color: #FFF;
+        strong {
+            color: #FFF;
+        }
+
+    }
 }

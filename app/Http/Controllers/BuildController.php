@@ -4,8 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Http\Requests\CreateBuildRequest;
+
 class BuildController extends Controller
 {
+
+    public function __construct()
+    {
+        return $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -23,7 +31,7 @@ class BuildController extends Controller
      */
     public function create()
     {
-        //
+        return view('builds.create');
     }
 
     /**
@@ -32,9 +40,9 @@ class BuildController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateBuildRequest $request)
     {
-        //
+        $request->persist();
     }
 
     /**

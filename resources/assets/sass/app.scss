@@ -16,8 +16,14 @@
 // Components
 @import "component/panel";
 @import "component/nav";
+@import "component/form";
+
+html, body {
+    height: 100%;
+}
 
 body {
+    background: $body-background;
     padding-top: 60px;
 }
 
@@ -45,7 +51,7 @@ a.is-icon {
 }
 
 .box {
-    border-radius: 0;
+    border-radius: 4px;
 }
 
 // Turn this into a slotted component in the layouts.app template

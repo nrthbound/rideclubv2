@@ -22,6 +22,9 @@
     <!-- Tipped -->
     <link rel="stylesheet" href="{{ asset('css/tipped.css') }}">
 
+    <!-- Tipped -->
+    <link rel="stylesheet" href="{{ asset('css/croppie.css') }}">
+
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700|Material+Icons" rel="stylesheet">
 
@@ -57,6 +60,7 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/tipped.js') }}"></script>
     <script src="{{ asset('js/iziToast.min.js') }}"></script>
+    <script src="{{ asset('js/croppie.min.js') }}"></script>
     <script type="text/javascript">
         $(document).ready(function() {
             Tipped.create('.simple-tooltip');

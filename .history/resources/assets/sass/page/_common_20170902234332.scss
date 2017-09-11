@@ -1,0 +1,17 @@
+div.is-page {
+    margin-top: 30px;
+}
+
+.level.is-primary {
+    padding: 15px;
+    background: $primary;
+    color: #FFF;
+    
+    .subtitle {
+        color: #FFF;
+        strong {
+            color: #FFF;
+        }
+        
+    }
+}
