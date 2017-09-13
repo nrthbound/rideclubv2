@@ -43,13 +43,12 @@
                     <div class="box-body">
                         <div class="columns">
                             <div class="column">
-                                <button type="button" class="button is-primary" v-bind:class="{ 'is-loading': clicked }" @click.prevent="store" name="button">Save</button>
+                                <button type="button" class="button is-primary" v-bind:class="{ 'is-loading': saved }" @click.prevent="store" name="button">Save</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </template>
@@ -61,13 +60,17 @@
             return {
                 'buildName': '',
                 'buildType': '',
-                'clicked': false,
+                'saved': false,
             }
         },
 
         created() {
             // TODO: If this was in Edit mode, populate the data properties
             // on success of Axios request
+        },
+
+        mounted() {
+            
         },
 
         methods: {
@@ -93,6 +96,8 @@
             }
         }
     }
+
+
 </script>
 
 <style lang="css">

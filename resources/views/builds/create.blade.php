@@ -18,7 +18,7 @@
 
             <build-form>
             </build-form>
-            
+
         </div>
     </div>
 @endsection
