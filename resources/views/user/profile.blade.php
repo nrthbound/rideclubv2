@@ -1,9 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<div style="margin: 30px;">
-    <img src="{{\Cloudder::show(\Auth::user()->profile->header, array("width" => 888, "height" => 150, "crop" => "fill"))}}" id="item" class="item" alt="">
-</div>
 
 <div class="profile">
     <div class="container">
@@ -106,6 +103,6 @@
 @section('scripts')
     <script>
     // TODO: Figure this shit out
-        var c = new Croppie(document.getElementById('item'));
+        //var c = new Croppie(document.getElementById('item'));
     </script>
 @endsection

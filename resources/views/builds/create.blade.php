@@ -16,6 +16,7 @@
                 </div>
             </nav>
 
+            {{--  This can be found in the js/components directory  --}}
             <build-form>
             </build-form>
 

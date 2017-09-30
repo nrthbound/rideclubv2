@@ -22072,13 +22072,55 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
             'buildName': '',
             'buildType': '',
-            'saved': false
+            'clicked': false,
+            'errors': []
         };
     },
     created: function created() {
@@ -22101,8 +22143,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 that.clicked = false;
             }).catch(function (error) {
                 that.clicked = false;
+
+                // Reset Errors array
+                that.errors = {};
+
                 for (var err in error.response.data.errors) {
-                    console.log(error.response.data.errors[err]);
+                    that.errors[err] = error.response.data.errors[err][0];
                 }
             });
         }
@@ -22172,7 +22218,7 @@ window.axios.defaults.headers.common = {
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(35)();
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 /***/ }),
 /* 35 */
@@ -42614,6 +42660,19 @@ module.exports = function normalizeComponent (
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
+    staticClass: "template-container"
+  }, [_c('div', {
+    staticClass: "columns"
+  }, [_c('div', {
+    staticClass: "column is-half is-offset-one-quarter"
+  }, [_c('ul', _vm._l((_vm.errors), function(error) {
+    return _c('li', {
+      staticClass: "error",
+      domProps: {
+        "textContent": _vm._s(error)
+      }
+    })
+  }))])]), _vm._v(" "), _c('div', {
     staticClass: "columns"
   }, [_c('div', {
     staticClass: "column is-half is-offset-one-quarter"
@@ -42626,7 +42685,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "form-icon has-shadow",
     class: {
-      'is-validated': _vm.buildName.length >= 4
+      'is-validated': _vm.buildName.length >= 6, 'is-danger': _vm.errors.buildName && _vm.buildName.length < 6
     }
   }, [_c('i', {
     staticClass: "material-icons"
@@ -42642,7 +42701,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       value: (_vm.buildName),
       expression: "buildName"
     }],
-    staticClass: "descriptor has-shadow",
+    staticClass: "descriptor has-shadow buildName",
     attrs: {
       "type": "text",
       "name": "build-name",
@@ -42668,11 +42727,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "form-icon has-shadow",
     class: {
-      'is-validated': _vm.buildType
+      'is-validated': _vm.buildType, 'is-danger': _vm.errors.buildType && _vm.buildType.length <= 0
     }
   }, [_c('i', {
     staticClass: "material-icons"
-  }, [_vm._v("done")])]), _vm._v("\n                    What type of build is this?\n                ")]), _vm._v(" "), _c('div', {
+  }, [_vm._v("done")])]), _vm._v("\n                        What type of build is this?\n                    ")]), _vm._v(" "), _c('div', {
     staticClass: "box-body"
   }, [_c('div', {
     staticClass: "columns"
@@ -42735,6 +42794,22 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "for": "bike"
     }
   }, [_vm._v("Bike")])])])])])]), _vm._v(" "), _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.buildType == 'skateboard'),
+      expression: "buildType == 'skateboard'"
+    }],
+    staticClass: "form-row"
+  }, [_vm._m(0)]), _vm._v(" "), _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.buildType == 'bike'),
+      expression: "buildType == 'bike'"
+    }],
+    staticClass: "form-row"
+  }, [_vm._m(1)]), _vm._v(" "), _c('div', {
     staticClass: "form-row"
   }, [_c('div', {
     staticClass: "form-box has-shadow"
@@ -42747,7 +42822,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('button', {
     staticClass: "button is-primary",
     class: {
-      'is-loading': _vm.saved
+      'is-loading': _vm.clicked
     },
     attrs: {
       "type": "button",
@@ -42759,8 +42834,32 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.store($event)
       }
     }
-  }, [_vm._v("Save")])])])])])])])])
-},staticRenderFns: []}
+  }, [_vm._v("Save")])])])])])])])])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "form-box has-shadow"
+  }, [_c('div', {
+    staticClass: "box-body"
+  }, [_c('div', {
+    staticClass: "columns"
+  }, [_c('div', {
+    staticClass: "column"
+  }, [_vm._v("\n                                Button 2\n                            ")]), _vm._v(" "), _c('div', {
+    staticClass: "column"
+  }, [_vm._v("\n                                Button 2\n                            ")])])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "form-box has-shadow"
+  }, [_c('div', {
+    staticClass: "box-body"
+  }, [_c('div', {
+    staticClass: "columns"
+  }, [_c('div', {
+    staticClass: "column"
+  }, [_vm._v("\n                                Button 2\n                            ")]), _vm._v(" "), _c('div', {
+    staticClass: "column"
+  }, [_vm._v("\n                                Button 2\n                            ")])])])])
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
